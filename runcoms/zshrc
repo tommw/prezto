@@ -38,6 +38,14 @@ if [[ -f "$HOME/.zsh_aliases" ]]; then
     source "$HOME/.zsh_aliases"
 fi
 
+# Load configuration for broot directory explorer
+source "$HOME/.config/broot/launcher/bash/br"
+
+# export paths for JAVA OPEN JDK
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
+export JAVA_HOME=/opt/homebrew/opt/openjdk
+
 # >>> juliaup initialize >>>
 # !! Contents within this block are managed by juliaup !!
 path=('/Users/tomwright/.juliaup/bin' $path)
