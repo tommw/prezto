@@ -26,3 +26,14 @@ eval "$(zoxide init zsh)"
 
 # Use fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Load custom shell functions if the file exists
+if [[ -f "$HOME/.zsh_functions" ]]; then
+    source "$HOME/.zsh_functions"
+fi
+
+# Load custom aliases if the file exists
+# Load aliases if the file exists
+if [[ -f "$HOME/.zsh_aliases" ]]; then
+    source "$HOME/.zsh_aliases"
+fi
