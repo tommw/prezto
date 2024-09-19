@@ -22,7 +22,11 @@ if [[ -o INTERACTIVE && -t 2 ]]; then
 
   # Print a random, hopefully interesting, adage.
   if (( $+commands[fortune] )); then
-    fortune -s
+    if (( $+commands[cowsay] )) && (( $+commands[lolcat] )); then
+      fortune -s | cowsay -f vader | lolcat
+    else
+      fortune -s
+    fi
     print
   fi
 
