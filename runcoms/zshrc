@@ -18,6 +18,8 @@ export VISUAL='vim'
 # Use bat for man pages
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
+ZSH_HIGHLIGHT_STYLES[cursor]='bg=blue'
+
 # Use starship as default prompt. Settings in ./config/starship.toml
 eval "$(starship init zsh)"
 
