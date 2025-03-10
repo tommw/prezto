@@ -15,6 +15,9 @@ fi
 export EDITOR='vim'
 export VISUAL='vim'
 
+# Do not log in .zsh_history commands with a leading space
+setopt HIST_IGNORE_SPACE
+
 # Use bat for man pages
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
@@ -69,3 +72,12 @@ export PATH
 # <<< juliaup initialize <<<
 
 source /Users/tomwright/.config/broot/launcher/bash/br
+
+# import environment variables (keys etc)
+export $(grep -v '^#' $HOME/.keys.env | xargs)
+
+# Add Visual Studio Code (code)
+export PATH="${PATH}:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
+# Set paths for luarocks
+eval "$(luarocks path)"
