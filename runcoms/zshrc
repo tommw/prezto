@@ -37,6 +37,7 @@ eval "$(zoxide init zsh)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 bindkey -e
+bindkey '^]' kill-line
 
 # Load custom shell functions if the file exists
 if [[ -f "$HOME/.zsh_functions" ]]; then
@@ -77,7 +78,10 @@ source /Users/tomwright/.config/broot/launcher/bash/br
 export $(grep -v '^#' $HOME/.keys.env | xargs)
 
 # Add Visual Studio Code (code)
-export PATH="${PATH}:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+export PATH="${PATH}:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/Applications/SWI-Prolog.app/Contents/MacOS"
+
+# Add global path for npm
+export PATH="$HOME/.npm-global/bin:$PATH"
 
 # Set paths for luarocks
 eval "$(luarocks path)"
