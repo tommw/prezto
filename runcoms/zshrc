@@ -33,9 +33,6 @@ eval "$(starship init zsh)"
 # zoxide for directory jumping
 eval "$(zoxide init zsh)"
 
-# Use fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 bindkey -e
 bindkey '^]' kill-line
 
@@ -85,3 +82,7 @@ export PATH="$HOME/.npm-global/bin:$PATH"
 
 # Set paths for luarocks
 eval "$(luarocks path)"
+
+# Use fzf
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source <(fzf --zsh)
